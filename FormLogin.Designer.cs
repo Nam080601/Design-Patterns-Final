@@ -55,6 +55,7 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(142, 210);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 23);
@@ -66,17 +67,18 @@
             // labelLogin
             // 
             this.labelLogin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogin.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLogin.Location = new System.Drawing.Point(0, 0);
             this.labelLogin.Margin = new System.Windows.Forms.Padding(0);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(382, 100);
+            this.labelLogin.Size = new System.Drawing.Size(384, 100);
             this.labelLogin.TabIndex = 3;
             this.labelLogin.Text = "LOGIN";
             this.labelLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelUsername
             // 
+            this.labelUsername.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.Location = new System.Drawing.Point(140, 85);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(100, 20);
@@ -86,6 +88,7 @@
             // 
             // labelPassword
             // 
+            this.labelPassword.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPassword.Location = new System.Drawing.Point(140, 145);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(100, 20);
@@ -97,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 303);
+            this.ClientSize = new System.Drawing.Size(384, 311);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.labelLogin);
@@ -108,6 +111,7 @@
             this.MaximumSize = new System.Drawing.Size(400, 350);
             this.MinimumSize = new System.Drawing.Size(400, 350);
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.ResumeLayout(false);

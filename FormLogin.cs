@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using Design_Patterns_Final.src;
 using System.Data;
+using Design_Patterns_Final.src.DAO;
 
 namespace Design_Patterns_Final
 {
@@ -20,22 +20,21 @@ namespace Design_Patterns_Final
         {
             string username = textBoxUsername.Text;
             string password = textBoxPassword.Text;
-            if (Login(username, password))
+
+            AccountDAO accountDAO = AccountDAO.Instance;
+
+            if (accountDAO.Login(username, password))
             {
                 MessageBox.Show("Login successful", "Login");
+                this.Hide();
+                FormMain formMain = new FormMain();
+                formMain.ShowDialog();
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Login faild", "Login");
             }
-        }
-        // Accounts DAO
-        public bool Login(string username, string password)
-        {
-            string query = "SELECT * FROM dbo.accounts WHERE taikhoan = N'" + username + "' AND matkhau = N'" + password + "' ";
-            DataTable result = DB.Instance.ExecuteQuery(query);
-
-            return result.Rows.Count > 0;
         }
     }
 }
