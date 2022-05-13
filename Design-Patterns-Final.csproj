@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCoffee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCoffee.Designer.cs">
+      <DependentUpon>FormCoffee.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     </Compile>
     <Compile Include="src\DAO\AccountDAO.cs" />
     <Compile Include="src\DB.cs" />
+    <EmbeddedResource Include="FormCoffee.resx">
+      <DependentUpon>FormCoffee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,10 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="src\Assets\coffee.png" />
-    <Content Include="src\Assets\receipt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,6 +14,7 @@ namespace Design_Patterns_Final
     public partial class FormMain : Form
     {
         private Button currentBtn;
+        private Form activeForm;
         public FormMain()
         {
             InitializeComponent();
@@ -21,7 +22,8 @@ namespace Design_Patterns_Final
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-
+            // Load Coffee Panel
+            btnCoffee.PerformClick();
         }
         private void ActivateButton(object btnSender)
         {
@@ -51,14 +53,47 @@ namespace Design_Patterns_Final
             }
         }
 
+        private void OpenChildForm(Form childForm, object btnSender)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            ActivateButton(btnSender);
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.panelMain.Controls.Add(activeForm);
+            this.panelMain.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            labelTitle.Text = childForm.Text;
+        }
+
         private void btnCoffee_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new FormCoffee(), sender);
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormCoffee(), sender);
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new FormCoffee(), sender);
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormCoffee(), sender);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

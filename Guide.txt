@@ -1,6 +1,0 @@
-Singleton : Kết nối DB
-Strategy : Đổi phương thức thanh toán
-Template Method : Biểu diễn quá trình thanh toán khác nhau
-Factory Method :
-Prototype : 
-Abstract Factory :

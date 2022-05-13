@@ -1,0 +1,24 @@
+[singleton]
+-  login & logout
+-> tạo connection, query tới db
+
+[factory + command]
+-  chọn nước
+-> tạo đối tượng nước tương ứng
+
+[decorator]
+-  chọn option
+-> list vào hoá đơn + tiền
+
+[]
+-  hoá đơn
+-> 
+
+[strategy + template]
+-  thanh toán
+	cash 	    -> done
+	card -> otp -> done
+	momo -> otp -> done
+-> 
+
+

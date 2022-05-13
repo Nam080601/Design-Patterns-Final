@@ -23,18 +23,38 @@ namespace Design_Patterns_Final
 
             AccountDAO accountDAO = AccountDAO.Instance;
 
-            if (accountDAO.Login(username, password))
+            if(username == "" || password == "")
             {
-                MessageBox.Show("Login successful", "Login");
-                this.Hide();
-                FormMain formMain = new FormMain();
-                formMain.ShowDialog();
-                this.Close();
+                MessageBox.Show("Username and password is required !", "Login");
             }
             else
             {
-                MessageBox.Show("Login faild", "Login");
+                if (accountDAO.Login(username, password))
+                {
+                    MessageBox.Show("Login successful !", "Login");
+                    this.Hide();
+
+                    FormMain formMain = new FormMain();
+                    formMain.ShowDialog();
+
+                    textBoxPassword.Clear();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect username or passowrd !", "Login");
+                }
             }
+        }
+
+        private void textBoxUsername_TextChanged(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnLogin;
+        }
+
+        private void textBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnLogin;
         }
     }
 }
