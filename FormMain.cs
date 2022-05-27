@@ -15,6 +15,8 @@ namespace Design_Patterns_Final
     {
         private Button currentBtn;
         private Form activeForm;
+        FormCoffee formCoffee = new FormCoffee();
+        FormThem formThem;
         public FormMain()
         {
             InitializeComponent();
@@ -27,9 +29,9 @@ namespace Design_Patterns_Final
         }
         private void ActivateButton(object btnSender)
         {
-            if(btnSender != null)
+            if (btnSender != null)
             {
-                if(currentBtn != btnSender)
+                if (currentBtn != btnSender)
                 {
                     DisableButton();
                     Color color = ColorTranslator.FromHtml("#205375");
@@ -42,11 +44,11 @@ namespace Design_Patterns_Final
         }
         private void DisableButton()
         {
-            foreach(Control prevBtn in panelMenu.Controls)
+            foreach (Control prevBtn in panelMenu.Controls)
             {
-                if(prevBtn.GetType() == typeof(Button))
+                if (prevBtn.GetType() == typeof(Button))
                 {
-                    prevBtn.BackColor = Color.FromArgb(51,51,76);
+                    prevBtn.BackColor = Color.FromArgb(51, 51, 76);
                     prevBtn.ForeColor = Color.Gainsboro;
                     prevBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
@@ -57,7 +59,7 @@ namespace Design_Patterns_Final
         {
             if (activeForm != null)
             {
-                activeForm.Close();
+                activeForm.Hide();
             }
             ActivateButton(btnSender);
             activeForm = childForm;
@@ -73,22 +75,23 @@ namespace Design_Patterns_Final
 
         private void btnCoffee_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormCoffee(), sender);
+            OpenChildForm(formCoffee, sender);
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormCoffee(), sender);
+            formThem = new FormThem(formCoffee);
+            OpenChildForm(new FormThem(formCoffee), sender);
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormCoffee(), sender);
+            //
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormCoffee(), sender);
+            //
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

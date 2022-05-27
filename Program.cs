@@ -14,7 +14,8 @@ namespace Design_Patterns_Final
         {            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            //Application.Run(new FormLogin());
+            Application.Run(new FormMain());
         }
     }
 }

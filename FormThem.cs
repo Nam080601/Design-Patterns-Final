@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,37 +12,40 @@ using Design_Patterns_Final.src.DAO;
 
 namespace Design_Patterns_Final
 {
-    public partial class FormCoffee : Form
+    public partial class FormThem : Form
     {
-        public DataTable dtCoffees, dtOrders;
-        List<Product> orders = new List<Product>();
-        Product product;
+        FormCoffee formCoffee;
+        DataTable dtToppings, dtOrders;
+        List<Product> orders;
+        Product topping;
         DataGridViewRow drRemove;
-        public FormCoffee()
+        public FormThem(FormCoffee formCoffee)
         {
+            this.formCoffee = formCoffee;
             InitializeComponent();
         }
 
-        private void FormCoffee_Load(object sender, EventArgs e)
+        private void FormThem_Load(object sender, EventArgs e)
         {
-            // Fill data
-            dtCoffees = new DataTable();
-            dtCoffees.Columns.Add(new DataColumn("Mã Sản Phẩm"));
-            dtCoffees.Columns.Add(new DataColumn("Tên Sản Phẩm"));
-            dtCoffees.Columns.Add(new DataColumn("Giá"));
+            // Create column
+            dtToppings = new DataTable();
+            dtToppings.Columns.Add(new DataColumn("Mã Sản Phẩm"));
+            dtToppings.Columns.Add(new DataColumn("Tên Sản Phẩm"));
+            dtToppings.Columns.Add(new DataColumn("Giá"));
 
-            foreach (Product p in ProductsDAO.Instance.GetAllProduct())
+            // Fill topping data
+            foreach (Product p in ToppingsDAO.Instance.GetAllTopping())
             {
-                DataRow dr = dtCoffees.NewRow();
+                DataRow dr = dtToppings.NewRow();
 
                 dr["Mã Sản Phẩm"] = p.MaSanPham;
                 dr["Tên Sản Phẩm"] = p.TenSanPham;
                 dr["Giá"] = p.Gia;
 
-                dtCoffees.Rows.Add(dr);
+                dtToppings.Rows.Add(dr);
             }
 
-            dataGridCoffee.DataSource = dtCoffees;
+            dataGridThem.DataSource = dtToppings;
 
             // Create Column
             dtOrders = new DataTable();
@@ -51,20 +53,30 @@ namespace Design_Patterns_Final
             dtOrders.Columns.Add(new DataColumn("Giá"));
 
             dataGridOrder.DataSource = dtOrders;
-        }
 
-        private void dataGridCoffee_SelectionChanged(object sender, EventArgs e)
+            // Fill data from coffee bill
+            for (int i = 0; i < formCoffee.dtOrders.Rows.Count; i++)
+            {
+                DataRow dr = dtOrders.NewRow();
+
+                dr["Tên Sản Phẩm"] = formCoffee.dtOrders.Rows[i]["Tên Sản Phẩm"];
+                dr["Giá"] = formCoffee.dtOrders.Rows[i]["Giá"];
+
+                dtOrders.Rows.Add(dr);
+            }
+
+        }
+        private void dataGridThem_SelectionChanged(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridCoffee.SelectedRows)
+            foreach (DataGridViewRow row in dataGridThem.SelectedRows)
             {
                 string masp = row.Cells[0].Value.ToString();
-                product = ProductsDAO.Instance.GetProduct(masp);
+                topping = ToppingsDAO.Instance.GetTopping(masp);
             }
         }
-
         private void btnCoffeeThem_Click(object sender, EventArgs e)
         {
-            orders.Add(product);
+            orders.Add(topping);
             dtOrders.Clear();
 
             // Fill Data
@@ -78,24 +90,13 @@ namespace Design_Patterns_Final
                 dtOrders.Rows.Add(dr);
             }
         }
-
         private void dataGridOrder_SelectionChanged(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridOrder.SelectedRows)
-            {
-                drRemove = row;
-            }
+            //
         }
-
         private void btnCoffeeXoa_Click(object sender, EventArgs e)
         {
-            try
-            {
-                orders.RemoveAt(drRemove.Index);
-                dataGridOrder.Rows.RemoveAt(drRemove.Index);                
-            } catch {
-                MessageBox.Show("Không có gì trong hoá đơn để xoá", "Lỗi");
-            }
+            //
         }
     }
 }

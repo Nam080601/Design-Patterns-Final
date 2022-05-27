@@ -18,7 +18,7 @@ namespace Design_Patterns_Final.src.DAO
         private AccountDAO() { }
         public bool Login(string username, string password)
         {
-            string query = "SELECT * FROM dbo.accounts WHERE taikhoan = N'" + username + "' AND matkhau = N'" + password + "' ";
+            string query = "SELECT * FROM dbo.TAIKHOAN WHERE TENTAIKHOAN = N'" + username + "' AND MATKHAU = N'" + password + "' ";
             DataTable result = DB.Instance.ExecuteQuery(query);
 
             return result.Rows.Count > 0;

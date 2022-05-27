@@ -151,7 +151,7 @@
             this.btnCoffee.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnCoffee.Size = new System.Drawing.Size(220, 75);
             this.btnCoffee.TabIndex = 1;
-            this.btnCoffee.Text = "   COFFEE";
+            this.btnCoffee.Text = "   SAN PHAM";
             this.btnCoffee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCoffee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCoffee.UseVisualStyleBackColor = true;
@@ -198,9 +198,9 @@
             this.labelTitle.ForeColor = System.Drawing.Color.White;
             this.labelTitle.Location = new System.Drawing.Point(298, 28);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(84, 23);
+            this.labelTitle.Size = new System.Drawing.Size(113, 23);
             this.labelTitle.TabIndex = 3;
-            this.labelTitle.Text = "COFFEE";
+            this.labelTitle.Text = "SAN PHAM";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelMain

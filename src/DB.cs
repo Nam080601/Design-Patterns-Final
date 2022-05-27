@@ -22,7 +22,7 @@ namespace Design_Patterns_Final.src
                 DB.instance = value;
             }
         }
-        private static string ConnectionString = "Data Source=.\\MAYCHU;Initial Catalog=mtk;Integrated Security=True";
+        private static string ConnectionString = "Data Source=NAM-WORK\\MAYCHU;Initial Catalog=mtk;Persist Security Info=True;User ID=sa;Password=123456";
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             SqlConnection conn = new SqlConnection(ConnectionString);
