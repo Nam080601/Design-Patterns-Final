@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Design_Patterns_Final.src;
+using Design_Patterns_Final.src.SanPham;
 
 namespace Design_Patterns_Final.src.DAO
 {
@@ -19,32 +16,43 @@ namespace Design_Patterns_Final.src.DAO
         private ToppingsDAO() { }
         public List<Product> GetAllTopping()
         {
-            List<Product> list = new List<Product>();
+            Product[] products = { new Bot(new Product()), new Duong(new Product()), new Sua(new Product()) };
+            List<Product> data = new List<Product>();
             string query = "SELECT * FROM dbo.THEM";
             DataTable result = DB.Instance.ExecuteQuery(query);
-
-            for (int i = 0; i < result.Rows.Count; i++)
+            foreach (DataRow row in result.Rows)
             {
-                Product t = new Product(
-                        result.Rows[i]["MASPTHEM"].ToString(),
-                        result.Rows[i]["TENSPTHEM"].ToString(),
-                        double.Parse(result.Rows[i]["GIA"].ToString())
-                        );
-                list.Add(t);
-
+                foreach (Product product in products)
+                {
+                    if (string.Equals(row["MASPTHEM"].ToString(), product.GetType().Name, StringComparison.OrdinalIgnoreCase))
+                    {
+                        product.IsTopping = true;
+                        product.MaSanPham = row["MASPTHEM"].ToString();
+                        product.TenSanPham = row["TENSPTHEM"].ToString();
+                        product.GiaSanPham = double.Parse(row["GIA"].ToString());
+                        data.Add(product);
+                    }
+                }
             }
-            return list;
+            return data;
         }
-        public Product GetTopping(string MaSPThem)
+        public Product GetTopping(string masanpham)
         {
-            string query = "SELECT * FROM dbo.THEM WHERE MASPTHEM = N'" + MaSPThem + "'";
+            Product[] products = { new Bot(new Product()), new Duong(new Product()), new Sua(new Product()) };
+            string query = "SELECT * FROM dbo.THEM WHERE MASPTHEM = N'" + masanpham + "'";
             DataTable result = DB.Instance.ExecuteQuery(query);
-            return
-                new Product(
-                    result.Rows[0]["MASPTHEM"].ToString(),
-                    result.Rows[0]["TENSPTHEM"].ToString(),
-                    double.Parse(result.Rows[0]["GIA"].ToString())
-                    );
+            foreach (Product product in products)
+            {
+                if (string.Equals(masanpham, product.GetType().Name, StringComparison.OrdinalIgnoreCase))
+                {
+                    product.IsTopping = true;
+                    product.MaSanPham = result.Rows[0]["MASPTHEM"].ToString();
+                    product.TenSanPham = result.Rows[0]["TENSPTHEM"].ToString();
+                    product.GiaSanPham = double.Parse(result.Rows[0]["GIA"].ToString());
+                    return product;
+                }
+            }
+            return null;
         }
     }
 }

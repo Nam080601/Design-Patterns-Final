@@ -15,8 +15,6 @@ namespace Design_Patterns_Final
     {
         private Button currentBtn;
         private Form activeForm;
-        FormCoffee formCoffee = new FormCoffee();
-        FormThem formThem;
         public FormMain()
         {
             InitializeComponent();
@@ -75,23 +73,22 @@ namespace Design_Patterns_Final
 
         private void btnCoffee_Click(object sender, EventArgs e)
         {
-            OpenChildForm(formCoffee, sender);
+            OpenChildForm(new FormCoffee(), sender);
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            formThem = new FormThem(formCoffee);
-            OpenChildForm(new FormThem(formCoffee), sender);
+            OpenChildForm(new FormThem(), sender);
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            //
+            OpenChildForm(new FormHoaDon(), sender);
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            //
+            OpenChildForm(new FormThanhToan(), sender);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

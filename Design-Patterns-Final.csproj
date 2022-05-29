@@ -67,6 +67,12 @@
     <Compile Include="FormCoffee.Designer.cs">
       <DependentUpon>FormCoffee.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHoaDon.Designer.cs">
+      <DependentUpon>FormHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThanhToan.Designer.cs">
+      <DependentUpon>FormThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="FormThem.cs">
       <SubType>Form</SubType>
@@ -92,19 +104,39 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="src\DAO\AccountDAO.cs" />
     <Compile Include="src\DAO\ToppingsDAO.cs" />
+    <Compile Include="src\Payment\Card.cs" />
+    <Compile Include="src\Payment\CardFactory.cs" />
+    <Compile Include="src\Payment\Cash.cs" />
+    <Compile Include="src\Payment\CashFactory.cs" />
+    <Compile Include="src\DAO\AccountDAO.cs" />
     <Compile Include="src\DAO\ProductsDAO.cs" />
     <Compile Include="src\DB.cs" />
-    <Compile Include="src\Product.cs" />
+    <Compile Include="src\Payment\Momo.cs" />
+    <Compile Include="src\Payment\MomoFactory.cs" />
+    <Compile Include="src\Payment\PaymentContext.cs" />
+    <Compile Include="src\Payment\PaymentFactory.cs" />
+    <Compile Include="src\Payment\PaymentProcess.cs" />
+    <Compile Include="src\SanPham\Sua.cs" />
+    <Compile Include="src\SanPham\Duong.cs" />
+    <Compile Include="src\SanPham\Bot.cs" />
+    <Compile Include="src\SanPham\ProductDecorator.cs" />
+    <Compile Include="src\Provider\BillProvider.cs" />
+    <Compile Include="src\SanPham\Product.cs" />
     <EmbeddedResource Include="FormCoffee.resx">
       <DependentUpon>FormCoffee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHoaDon.resx">
+      <DependentUpon>FormHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThanhToan.resx">
+      <DependentUpon>FormThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThem.resx">
       <DependentUpon>FormThem.cs</DependentUpon>

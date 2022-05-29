@@ -192,13 +192,12 @@
             // 
             // labelTitle
             // 
-            this.labelTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelTitle.AutoSize = true;
+            this.labelTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTitle.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(298, 28);
+            this.labelTitle.Location = new System.Drawing.Point(0, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(113, 23);
+            this.labelTitle.Size = new System.Drawing.Size(680, 80);
             this.labelTitle.TabIndex = 3;
             this.labelTitle.Text = "SAN PHAM";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -223,13 +222,12 @@
             this.MinimumSize = new System.Drawing.Size(900, 500);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quan ly quan cafe";
+            this.Text = " QUAN LY BAN COFFEE";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             this.panelCoffee.ResumeLayout(false);
-            this.panelCoffee.PerformLayout();
             this.ResumeLayout(false);
 
         }

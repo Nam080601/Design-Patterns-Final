@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelThem = new System.Windows.Forms.Panel();
             this.btnCoffeeXoa = new System.Windows.Forms.Button();
             this.labelCoffeeList = new System.Windows.Forms.Label();
@@ -37,6 +37,7 @@
             this.dataGridThem = new System.Windows.Forms.DataGridView();
             this.tHEMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelBill = new System.Windows.Forms.Panel();
+            this.labelOrder = new System.Windows.Forms.Label();
             this.dataGridOrder = new System.Windows.Forms.DataGridView();
             this.panelThem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridThem)).BeginInit();
@@ -55,7 +56,7 @@
             this.panelThem.Location = new System.Drawing.Point(0, 0);
             this.panelThem.Name = "panelThem";
             this.panelThem.Size = new System.Drawing.Size(383, 420);
-            this.panelThem.TabIndex = 2;
+            this.panelThem.TabIndex = 0;
             // 
             // btnCoffeeXoa
             // 
@@ -106,14 +107,14 @@
             this.dataGridThem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridThem.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridThem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridThem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridThem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridThem.ColumnHeadersHeight = 30;
             this.dataGridThem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.dataGridThem.Location = new System.Drawing.Point(12, 36);
@@ -130,30 +131,55 @@
             // 
             // panelBill
             // 
+            this.panelBill.Controls.Add(this.labelOrder);
             this.panelBill.Controls.Add(this.dataGridOrder);
-            this.panelBill.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelBill.Location = new System.Drawing.Point(380, 0);
+            this.panelBill.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelBill.Location = new System.Drawing.Point(383, 0);
             this.panelBill.Name = "panelBill";
             this.panelBill.Size = new System.Drawing.Size(300, 420);
-            this.panelBill.TabIndex = 3;
+            this.panelBill.TabIndex = 2;
+            // 
+            // labelOrder
+            // 
+            this.labelOrder.AutoSize = true;
+            this.labelOrder.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOrder.Location = new System.Drawing.Point(6, 9);
+            this.labelOrder.Name = "labelOrder";
+            this.labelOrder.Size = new System.Drawing.Size(93, 23);
+            this.labelOrder.TabIndex = 5;
+            this.labelOrder.Text = "HOÁ ĐƠN";
             // 
             // dataGridOrder
             // 
+            this.dataGridOrder.AllowUserToAddRows = false;
+            this.dataGridOrder.AllowUserToDeleteRows = false;
+            this.dataGridOrder.AllowUserToResizeColumns = false;
+            this.dataGridOrder.AllowUserToResizeRows = false;
+            this.dataGridOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridOrder.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridOrder.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridOrder.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridOrder.ColumnHeadersHeight = 30;
+            this.dataGridOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.dataGridOrder.Location = new System.Drawing.Point(9, 36);
             this.dataGridOrder.Name = "dataGridOrder";
+            this.dataGridOrder.ReadOnly = true;
+            this.dataGridOrder.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridOrder.RowHeadersVisible = false;
+            this.dataGridOrder.RowTemplate.Height = 30;
+            this.dataGridOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridOrder.Size = new System.Drawing.Size(279, 322);
-            this.dataGridOrder.TabIndex = 6;
-            this.dataGridOrder.SelectionChanged += new System.EventHandler(this.dataGridOrder_SelectionChanged);
+            this.dataGridOrder.TabIndex = 1;
             // 
             // FormThem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 420);
-            this.Controls.Add(this.panelThem);
             this.Controls.Add(this.panelBill);
+            this.Controls.Add(this.panelThem);
             this.Name = "FormThem";
             this.Text = "THEM";
             this.Load += new System.EventHandler(this.FormThem_Load);
@@ -162,6 +188,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridThem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tHEMBindingSource)).EndInit();
             this.panelBill.ResumeLayout(false);
+            this.panelBill.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrder)).EndInit();
             this.ResumeLayout(false);
 
@@ -174,8 +201,9 @@
         private System.Windows.Forms.Label labelCoffeeList;
         private System.Windows.Forms.Button btnCoffeeThem;
         private System.Windows.Forms.DataGridView dataGridThem;
-        private System.Windows.Forms.Panel panelBill;
-        private System.Windows.Forms.DataGridView dataGridOrder;
         private System.Windows.Forms.BindingSource tHEMBindingSource;
+        private System.Windows.Forms.Panel panelBill;
+        private System.Windows.Forms.Label labelOrder;
+        private System.Windows.Forms.DataGridView dataGridOrder;
     }
 }

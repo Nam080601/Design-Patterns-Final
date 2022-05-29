@@ -7,19 +7,14 @@ using System.Windows.Forms;
 
 namespace Design_Patterns_Final.src
 {
-    internal class Momo : PaymentProcess
+    internal class Card : PaymentProcess
     {
-        public string opt;
-        public Boolean result = false;
-        //public override void CheckOTP(string otp)
-        //{
-        //    Console.WriteLine("CheckOTP Momo");
-        //}
+        public bool result = false;
         public override void Handle(string otp)
         {
-            if (opt == "123456")
+            if (otp == "1234")
             {
-                this.result = true;
+                result = true;
             }
 
         }

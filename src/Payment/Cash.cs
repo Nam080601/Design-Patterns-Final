@@ -9,19 +9,14 @@ namespace Design_Patterns_Final.src
 {
     internal class Cash : PaymentProcess
     {
-        public string opt;
-        public Boolean result = false;
-        //public override void CheckOTP(string otp)
-        //{
-        //    return;
-        //}
+        public bool result = false;
         public override void Handle(string otp)
         {
-             this.result = true;
+             result = true;
         }
         public override void Notify()
         {
-            if (this.result)
+            if (result)
             {
               MessageBox.Show("Success", "Notify");
             }
