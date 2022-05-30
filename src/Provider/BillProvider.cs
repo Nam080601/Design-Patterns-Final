@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Design_Patterns_Final.src.SanPham;
 
-namespace Design_Patterns_Final.src
+namespace Design_Patterns_Final.src.Provider
 {
     internal class BillProvider
     {
@@ -12,7 +12,7 @@ namespace Design_Patterns_Final.src
             get { if (instance == null) instance = new BillProvider(); return instance; }
             private set { instance = value; }
         }
-        private BillProvider() { }   
+        private BillProvider() { }
         public List<Product> GetBill()
         {
             return bill;

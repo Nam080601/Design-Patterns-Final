@@ -2,9 +2,9 @@
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using Design_Patterns_Final.src;
 using Design_Patterns_Final.src.DAO;
 using Design_Patterns_Final.src.SanPham;
+using Design_Patterns_Final.src.Provider;
 
 namespace Design_Patterns_Final
 {
@@ -60,7 +60,6 @@ namespace Design_Patterns_Final
                 dtOrders.Rows.Add(dr);
             }
         }
-
         private void dataGridCoffee_SelectionChanged(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dataGridCoffee.SelectedRows)
@@ -69,7 +68,6 @@ namespace Design_Patterns_Final
                 product = ProductsDAO.Instance.GetProduct(masp);
             }
         }
-
         private void btnCoffeeThem_Click(object sender, EventArgs e)
         {
             BillProvider.Instance.AddItem(product);
@@ -95,15 +93,12 @@ namespace Design_Patterns_Final
         {
             try
             {
-                if(drRemove == null)
-                {
-                    MessageBox.Show("Không có gì trong hoá đơn để xoá", "Lỗi");
-                    return;
-                }
                 BillProvider.Instance.RemoveItem(drRemove.Index);
-                dataGridOrder.Rows.RemoveAt(drRemove.Index);                
-            } catch {
-                MessageBox.Show("Lỗi !", "Lỗi");
+                dataGridOrder.Rows.RemoveAt(drRemove.Index);
+            }
+            catch
+            {
+                MessageBox.Show("Không có gì trong hoá đơn để xoá", "Lỗi");
             }
         }
     }

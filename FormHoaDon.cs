@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using Design_Patterns_Final.src;
+using Design_Patterns_Final.src.Provider;
 using Design_Patterns_Final.src.SanPham;
 
 namespace Design_Patterns_Final
@@ -40,11 +40,19 @@ namespace Design_Patterns_Final
             // Calc Total
             double ThanhTien = 0;
             Product mainProduct = new Product();
-            foreach (Product p in BillProvider.Instance.GetBill())
-            {                
+            for (int i = 0; i < BillProvider.Instance.GetBill().Count; i++)
+            {
+                Product p = BillProvider.Instance.GetBill()[i];
                 if (!p.IsTopping)
                 {
                     mainProduct = p;
+                    if (
+                        i+1 == BillProvider.Instance.GetBill().Count ||
+                        !BillProvider.Instance.GetBill()[i + 1].IsTopping
+                        )
+                    {
+                        ThanhTien += mainProduct.ThanhTien();
+                    }
                 }
                 else
                 {

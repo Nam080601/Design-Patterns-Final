@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Design_Patterns_Final.src.Provider;
 
-namespace Design_Patterns_Final.src
+namespace Design_Patterns_Final.src.Payment
 {
     internal class PaymentContext
     {
@@ -17,8 +13,8 @@ namespace Design_Patterns_Final.src
         
         public void Execute()
         {
-            payment.Handle();
-            payment.Notify();
+            bool result = payment.Handle(OTPProvider.Instance.GetOTP());
+            payment.Notify(result);
         }
     }
 }

@@ -45,6 +45,7 @@
             this.btnMomo.Size = new System.Drawing.Size(150, 150);
             this.btnMomo.TabIndex = 0;
             this.btnMomo.UseVisualStyleBackColor = true;
+            this.btnMomo.Click += new System.EventHandler(this.btnMomo_Click);
             // 
             // btnCard
             // 
@@ -54,6 +55,7 @@
             this.btnCard.Size = new System.Drawing.Size(150, 150);
             this.btnCard.TabIndex = 1;
             this.btnCard.UseVisualStyleBackColor = true;
+            this.btnCard.Click += new System.EventHandler(this.btnCard_Click);
             // 
             // btnCash
             // 
@@ -63,6 +65,7 @@
             this.btnCash.Size = new System.Drawing.Size(150, 150);
             this.btnCash.TabIndex = 2;
             this.btnCash.UseVisualStyleBackColor = true;
+            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
             // 
             // labelMOMO
             // 
@@ -107,6 +110,7 @@
             this.Controls.Add(this.btnMomo);
             this.Name = "FormThanhToan";
             this.Text = "THANH TOAN";
+            this.Load += new System.EventHandler(this.FormThanhToan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

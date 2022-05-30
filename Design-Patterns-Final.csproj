@@ -85,6 +85,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOTP.Designer.cs">
+      <DependentUpon>FormOTP.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,7 @@
     <Compile Include="src\Payment\PaymentContext.cs" />
     <Compile Include="src\Payment\PaymentFactory.cs" />
     <Compile Include="src\Payment\PaymentProcess.cs" />
+    <Compile Include="src\Provider\OTPProvider.cs" />
     <Compile Include="src\SanPham\Sua.cs" />
     <Compile Include="src\SanPham\Duong.cs" />
     <Compile Include="src\SanPham\Bot.cs" />
@@ -134,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOTP.resx">
+      <DependentUpon>FormOTP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThanhToan.resx">
       <DependentUpon>FormThanhToan.cs</DependentUpon>

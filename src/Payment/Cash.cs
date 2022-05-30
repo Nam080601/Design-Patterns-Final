@@ -1,26 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
-namespace Design_Patterns_Final.src
+namespace Design_Patterns_Final.src.Payment
 {
     internal class Cash : PaymentProcess
     {
-        public bool result = false;
-        public override void Handle(string otp)
+        public override bool Handle(string otp)
         {
-             result = true;
+            if (string.Equals(otp, ""))
+                return true;
+            return false;
         }
-        public override void Notify()
+        public override void Notify(bool result)
         {
             if (result)
             {
-              MessageBox.Show("Success", "Notify");
+                MessageBox.Show("Success", "Notify");
             }
-            MessageBox.Show("Faild", "Notify");
+            else
+            {
+                MessageBox.Show("Failed", "Notify");
+            }
         }
     }
 }

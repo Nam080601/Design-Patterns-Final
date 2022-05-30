@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Design_Patterns_Final.src
+﻿namespace Design_Patterns_Final.src.Payment
 {
     abstract class PaymentProcess
     {
         
         public void Execute()
         {
-            Handle();
-            Notify();
+            bool result = Handle();
+            Notify(result);
         }   
         
-        public abstract void Handle(string opt="");
-        public abstract void Notify();
+        public abstract bool Handle(string opt="");
+        public abstract void Notify(bool result);
     }
 }

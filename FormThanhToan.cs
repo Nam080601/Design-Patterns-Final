@@ -1,20 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Design_Patterns_Final.src.Payment;
 
 namespace Design_Patterns_Final
 {
     public partial class FormThanhToan : Form
     {
+        PaymentContext context;
         public FormThanhToan()
         {
             InitializeComponent();
+        }
+
+        private void FormThanhToan_Load(object sender, EventArgs e)
+        {
+            context = new PaymentContext();
+        }
+
+        private void btnMomo_Click(object sender, EventArgs e)
+        {            
+            Form otp = new FormOTP("Momo");
+            otp.Show();
+        }
+
+        private void btnCard_Click(object sender, EventArgs e)
+        {
+            Form otp = new FormOTP("Momo");
+            otp.Show();
+        }
+
+        private void btnCash_Click(object sender, EventArgs e)
+        {
+            context.setPaymentStrategy(new CashFactory());
+            context.Execute();
         }
     }
 }

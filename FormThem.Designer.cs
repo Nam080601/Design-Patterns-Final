@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelThem = new System.Windows.Forms.Panel();
             this.btnCoffeeXoa = new System.Windows.Forms.Button();
             this.labelCoffeeList = new System.Windows.Forms.Label();
@@ -54,8 +54,9 @@
             this.panelThem.Controls.Add(this.dataGridThem);
             this.panelThem.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelThem.Location = new System.Drawing.Point(0, 0);
+            this.panelThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelThem.Name = "panelThem";
-            this.panelThem.Size = new System.Drawing.Size(383, 420);
+            this.panelThem.Size = new System.Drawing.Size(574, 646);
             this.panelThem.TabIndex = 0;
             // 
             // btnCoffeeXoa
@@ -64,9 +65,10 @@
             this.btnCoffeeXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCoffeeXoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCoffeeXoa.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCoffeeXoa.Location = new System.Drawing.Point(131, 373);
+            this.btnCoffeeXoa.Location = new System.Drawing.Point(196, 574);
+            this.btnCoffeeXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCoffeeXoa.Name = "btnCoffeeXoa";
-            this.btnCoffeeXoa.Size = new System.Drawing.Size(100, 35);
+            this.btnCoffeeXoa.Size = new System.Drawing.Size(150, 54);
             this.btnCoffeeXoa.TabIndex = 5;
             this.btnCoffeeXoa.Text = "XOÁ";
             this.btnCoffeeXoa.UseVisualStyleBackColor = false;
@@ -76,9 +78,10 @@
             // 
             this.labelCoffeeList.AutoSize = true;
             this.labelCoffeeList.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCoffeeList.Location = new System.Drawing.Point(12, 9);
+            this.labelCoffeeList.Location = new System.Drawing.Point(18, 14);
+            this.labelCoffeeList.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCoffeeList.Name = "labelCoffeeList";
-            this.labelCoffeeList.Size = new System.Drawing.Size(208, 23);
+            this.labelCoffeeList.Size = new System.Drawing.Size(315, 35);
             this.labelCoffeeList.TabIndex = 4;
             this.labelCoffeeList.Text = "DANH SÁCH SẢN PHẨM";
             // 
@@ -88,9 +91,10 @@
             this.btnCoffeeThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCoffeeThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCoffeeThem.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCoffeeThem.Location = new System.Drawing.Point(16, 373);
+            this.btnCoffeeThem.Location = new System.Drawing.Point(24, 574);
+            this.btnCoffeeThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCoffeeThem.Name = "btnCoffeeThem";
-            this.btnCoffeeThem.Size = new System.Drawing.Size(100, 35);
+            this.btnCoffeeThem.Size = new System.Drawing.Size(150, 54);
             this.btnCoffeeThem.TabIndex = 1;
             this.btnCoffeeThem.Text = "THÊM";
             this.btnCoffeeThem.UseVisualStyleBackColor = false;
@@ -107,25 +111,27 @@
             this.dataGridThem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridThem.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridThem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridThem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridThem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridThem.ColumnHeadersHeight = 30;
             this.dataGridThem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.dataGridThem.Location = new System.Drawing.Point(12, 36);
+            this.dataGridThem.Location = new System.Drawing.Point(18, 55);
+            this.dataGridThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridThem.Name = "dataGridThem";
             this.dataGridThem.ReadOnly = true;
             this.dataGridThem.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridThem.RowHeadersVisible = false;
+            this.dataGridThem.RowHeadersWidth = 62;
             this.dataGridThem.RowTemplate.Height = 30;
             this.dataGridThem.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridThem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridThem.Size = new System.Drawing.Size(362, 322);
+            this.dataGridThem.Size = new System.Drawing.Size(543, 495);
             this.dataGridThem.TabIndex = 0;
             this.dataGridThem.SelectionChanged += new System.EventHandler(this.dataGridThem_SelectionChanged);
             // 
@@ -134,18 +140,20 @@
             this.panelBill.Controls.Add(this.labelOrder);
             this.panelBill.Controls.Add(this.dataGridOrder);
             this.panelBill.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelBill.Location = new System.Drawing.Point(383, 0);
+            this.panelBill.Location = new System.Drawing.Point(574, 0);
+            this.panelBill.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelBill.Name = "panelBill";
-            this.panelBill.Size = new System.Drawing.Size(300, 420);
+            this.panelBill.Size = new System.Drawing.Size(450, 646);
             this.panelBill.TabIndex = 2;
             // 
             // labelOrder
             // 
             this.labelOrder.AutoSize = true;
             this.labelOrder.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOrder.Location = new System.Drawing.Point(6, 9);
+            this.labelOrder.Location = new System.Drawing.Point(9, 14);
+            this.labelOrder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelOrder.Name = "labelOrder";
-            this.labelOrder.Size = new System.Drawing.Size(93, 23);
+            this.labelOrder.Size = new System.Drawing.Size(143, 35);
             this.labelOrder.TabIndex = 5;
             this.labelOrder.Text = "HOÁ ĐƠN";
             // 
@@ -163,23 +171,27 @@
             this.dataGridOrder.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridOrder.ColumnHeadersHeight = 30;
             this.dataGridOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.dataGridOrder.Location = new System.Drawing.Point(9, 36);
+            this.dataGridOrder.Location = new System.Drawing.Point(14, 55);
+            this.dataGridOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridOrder.Name = "dataGridOrder";
             this.dataGridOrder.ReadOnly = true;
             this.dataGridOrder.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridOrder.RowHeadersVisible = false;
+            this.dataGridOrder.RowHeadersWidth = 62;
             this.dataGridOrder.RowTemplate.Height = 30;
             this.dataGridOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridOrder.Size = new System.Drawing.Size(279, 322);
+            this.dataGridOrder.Size = new System.Drawing.Size(418, 495);
             this.dataGridOrder.TabIndex = 1;
+            this.dataGridOrder.SelectionChanged += new System.EventHandler(this.dataGridOrder_SelectionChanged);
             // 
             // FormThem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 420);
+            this.ClientSize = new System.Drawing.Size(1020, 646);
             this.Controls.Add(this.panelBill);
             this.Controls.Add(this.panelThem);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormThem";
             this.Text = "THEM";
             this.Load += new System.EventHandler(this.FormThem_Load);
