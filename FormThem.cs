@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Design_Patterns_Final.src.DAO;
 using Design_Patterns_Final.src.SanPham;
 using Design_Patterns_Final.src.Provider;
+using Design_Patterns_Final.src.Command;
 
 namespace Design_Patterns_Final
 {
@@ -13,6 +14,7 @@ namespace Design_Patterns_Final
         DataTable dtToppings, dtOrders;
         Product topping;
         DataGridViewRow drRemove;
+        CommandControl commandControl;
         public FormThem()
         {
             InitializeComponent();
@@ -20,6 +22,8 @@ namespace Design_Patterns_Final
 
         private void FormThem_Load(object sender, EventArgs e)
         {
+            // Create command
+            commandControl = new CommandControl();
             // Create Topping Column
             dtToppings = new DataTable();
             dtToppings.Columns.Add(new DataColumn("Mã Sản Phẩm"));
@@ -70,15 +74,13 @@ namespace Design_Patterns_Final
         }
         private void btnCoffeeThem_Click(object sender, EventArgs e)
         {
-            BillProvider.Instance.AddItem(topping);
+            // Call command add topping to bill
+            commandControl.SetCommand(new AddBillCommand(topping));
+            commandControl.Execute();
 
-            DataRow dr = dtOrders.NewRow();
-
-            dr["Mã Sản Phẩm"] = BillProvider.Instance.GetBill().LastOrDefault().MaSanPham;
-            dr["Tên Sản Phẩm"] = BillProvider.Instance.GetBill().LastOrDefault().TenSanPham;
-            dr["Giá"] = BillProvider.Instance.GetBill().LastOrDefault().GiaSanPham;
-
-            dtOrders.Rows.Add(dr);
+            // Call command add topping to view
+            commandControl.SetCommand(new AddBillViewCommand(dtOrders));
+            commandControl.Execute();
         }
 
         private void dataGridOrder_SelectionChanged(object sender, EventArgs e)

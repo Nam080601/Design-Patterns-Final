@@ -25,5 +25,9 @@ namespace Design_Patterns_Final.src.Provider
         {
             bill.RemoveAt(index);
         }
+        public void RemoveAllItem()
+        {
+            bill.Clear();
+        }
     }
 }

@@ -1,13 +1,17 @@
-﻿using System.Windows.Forms;
+﻿using Design_Patterns_Final.src.Command;
+using Design_Patterns_Final.src.Provider;
+using System.Windows.Forms;
 
 namespace Design_Patterns_Final.src.Payment
 {
     internal class Card : PaymentProcess
     {
+        CommandControl commandControl = new CommandControl();
         public override bool Handle(string otp)
         {
             if (string.Equals(otp, "1234"))
             {
+                OTPProvider.Instance.RemoveOTP();
                 return true;
             }
             return false;
@@ -17,11 +21,14 @@ namespace Design_Patterns_Final.src.Payment
         {
             if (result)
             {
-                MessageBox.Show("Success", "Notify");
+                MessageBox.Show("Payment successful", "Notify");
+                // Clear bill view
+                commandControl.SetCommand(new ClearBillViewCommand());
+                commandControl.Execute();
             }
             else
             {
-                MessageBox.Show("Failed", "Notify");
+                MessageBox.Show("Incorrect OTP", "Notify");
             }
         }
     }

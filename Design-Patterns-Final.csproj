@@ -110,6 +110,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="src\Command\ClearBillViewCommand.cs" />
+    <Compile Include="src\Command\AddBillViewCommand.cs" />
+    <Compile Include="src\Command\AddBillCommand.cs" />
+    <Compile Include="src\Command\Bill.cs" />
+    <Compile Include="src\Command\Command.cs" />
+    <Compile Include="src\Command\CommandControl.cs" />
     <Compile Include="src\DAO\ToppingsDAO.cs" />
     <Compile Include="src\Payment\Card.cs" />
     <Compile Include="src\Payment\CardFactory.cs" />

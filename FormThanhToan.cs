@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Design_Patterns_Final.src.Command;
 using Design_Patterns_Final.src.Payment;
 
 namespace Design_Patterns_Final
@@ -7,6 +8,7 @@ namespace Design_Patterns_Final
     public partial class FormThanhToan : Form
     {
         PaymentContext context;
+        CommandControl commandControl;
         public FormThanhToan()
         {
             InitializeComponent();
@@ -15,6 +17,7 @@ namespace Design_Patterns_Final
         private void FormThanhToan_Load(object sender, EventArgs e)
         {
             context = new PaymentContext();
+            commandControl = new CommandControl();
         }
 
         private void btnMomo_Click(object sender, EventArgs e)
@@ -25,7 +28,7 @@ namespace Design_Patterns_Final
 
         private void btnCard_Click(object sender, EventArgs e)
         {
-            Form otp = new FormOTP("Momo");
+            Form otp = new FormOTP("Card");
             otp.Show();
         }
 

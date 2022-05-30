@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Design_Patterns_Final.src.DAO;
 using Design_Patterns_Final.src.SanPham;
 using Design_Patterns_Final.src.Provider;
+using Design_Patterns_Final.src.Command;
 
 namespace Design_Patterns_Final
 {
@@ -13,6 +14,7 @@ namespace Design_Patterns_Final
         DataTable dtCoffees, dtOrders;
         Product product;
         DataGridViewRow drRemove;
+        CommandControl commandControl;
         public FormCoffee()
         {
             InitializeComponent();
@@ -20,6 +22,8 @@ namespace Design_Patterns_Final
 
         private void FormCoffee_Load(object sender, EventArgs e)
         {
+            // Create command
+            commandControl = new CommandControl();
             // Create Coffee Column
             dtCoffees = new DataTable();
             dtCoffees.Columns.Add(new DataColumn("Mã Sản Phẩm"));
@@ -70,15 +74,13 @@ namespace Design_Patterns_Final
         }
         private void btnCoffeeThem_Click(object sender, EventArgs e)
         {
-            BillProvider.Instance.AddItem(product);
+            // Call command add product to bill
+            commandControl.SetCommand(new AddBillCommand(product));
+            commandControl.Execute();
 
-            DataRow dr = dtOrders.NewRow();
-
-            dr["Mã Sản Phẩm"] = BillProvider.Instance.GetBill().LastOrDefault().MaSanPham;
-            dr["Tên Sản Phẩm"] = BillProvider.Instance.GetBill().LastOrDefault().TenSanPham;
-            dr["Giá"] = BillProvider.Instance.GetBill().LastOrDefault().GiaSanPham;
-
-            dtOrders.Rows.Add(dr);
+            // Call command add product to view
+            commandControl.SetCommand(new AddBillViewCommand(dtOrders));
+            commandControl.Execute();
         }
 
         private void dataGridOrder_SelectionChanged(object sender, EventArgs e)

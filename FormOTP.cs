@@ -18,7 +18,6 @@ namespace Design_Patterns_Final
         private void FormOTP_Load(object sender, EventArgs e)
         {
             context = new PaymentContext();
-
         }
 
         private void btnOTP_Click(object sender, EventArgs e)
@@ -30,7 +29,7 @@ namespace Design_Patterns_Final
             {
                 if (string.Equals(p.GetType().Name, type + "Factory", StringComparison.OrdinalIgnoreCase)) {
                     context.setPaymentStrategy(p);
-                    context.Execute();
+                    context.Execute();                    
                     Hide();
                     isExec = true;
                 }
